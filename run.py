@@ -20,7 +20,7 @@ def main():
     global length
     global play_game
     words_to_guess = ["chelsea", "Liverpool", "Leeds", "Watford", "Everton",
-                      "Arsenal", "Wolves", "Tottenham", "Brentford",
+                      "asrsenal", "Wolves", "Tottenham", "Brentford",
                       "Newcastle"]
     word = random.choice(words_to_guess)
     length = len(word)
@@ -40,7 +40,7 @@ def play_loop():
         main()
         hangman()
     elif play_game == "n":
-        print("Thanks For Playing! We expect you back again!")
+        print("Thanks For Playing! We hope to see you back again!")
         exit()
 
 # Conditions required to play game #
