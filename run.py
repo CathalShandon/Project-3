@@ -19,7 +19,7 @@ def main():
     global already_guessed
     global length
     global play_game
-    words_to_guess = ["Chelsea", "Liverpool", "Leeds", "Watford", "Everton",
+    words_to_guess = ["chelsea", "Liverpool", "Leeds", "Watford", "Everton",
                       "Arsenal", "Wolves", "Tottenham", "Brentford",
                       "Newcastle"]
     word = random.choice(words_to_guess)
