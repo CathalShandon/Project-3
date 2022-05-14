@@ -53,6 +53,8 @@ def hangman():
     global already_guessed
     global play_game
     limit = 5
+    print(
+    "Hint: The word has", len(word), "letters")
     guess = input("This is the word: " + display + " Enter your guess: \n")
     guess = guess.strip()
     if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
