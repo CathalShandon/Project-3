@@ -49,11 +49,15 @@ You win by guessing the word that the computer has chosen for you in that game.
 
 ### Username
 - This is the first page you see when the app loads. You will be asked to enter your username.
+<img src="images/user-name.png" alt ="picture of requesing you to enter username">
+
 ### Welcome page
 - On this page there is a welcome message and a question to the user. The question asks the user if they want to see the instructions or if they are happy to go ahead and play without seeing them. 
+<img src="images/welcome-page.png" alt="welcome page">
 
 ### Instructions
 - The instructions page explains to the user how the game is played and then asks the user if they are ready for the game.
+<img src="images/instructions.png" alt="instrunctions page">
 
 ### Game
 - When the user starts the game, it shows the user the length of the word they are guessing and asks the user to enter a letter.
