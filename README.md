@@ -13,7 +13,6 @@ You win by guessing the word that the computer has chosen for you in that game.
 
 1. [Plans and structure](#plans-and-structure)
     - [Objectives](#objectives)
-    - [Changes throughout the process](#changes-throughout-the-process)
 2. [Features](#features)
     - [User name](#username)
     - [Welcome page](#welcome-page)
@@ -40,7 +39,6 @@ You win by guessing the word that the computer has chosen for you in that game.
 - Is it clear to know how many tries is there remaining.
 - This is done when the user gets a guess wrong the remaining attempts are printed out each round if they get the answer right or wrong it will print out the traditional hangman image that shows how many tries the user has left in the game.
 
-### Changes throughout the process
 
 ## Features 
 

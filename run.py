@@ -46,17 +46,18 @@ def instructions():
     os.system("cls" if os.name == "nt" else "clear")
     # print instructions
     print("To play this preimer league hangman game, all you need to "
-          "do is guess the word one letter at a time. \n\n1. "
-          "Type a letter of your choice and hit enter.\n2. If your guess is"
-          " correct the letter will show within the hidden word.\n3. If your"
+          "do is guess the word one letter at a time."
+          "\n\n1. You will get five attempts.\n2"
+          "  Type a letter of your choice and hit enter.\n3. If your guess is"
+          " correct the letter will show within the hidden word.\n4. If your"
           " guess is incorrect a section of the hangman picture will appear."
-          "\n4. Keep guessing until you guess the correct word or you run"
+          "\n5. Keep guessing until you guess the correct word or you run"
           "out of tries.\n")
 
     # Ask user if they are ready to play.
     print("Are you ready to play?")
     ready = input("Please type y for yes or any button to go"
-                  "back to welcome page:\n")
+                  " back to welcome page:\n")
     if ready == "y":
         os.system("cls" if os.name == "nt" else "clear")
         hangman()
@@ -82,7 +83,7 @@ def main():
     word = random.choice(words_to_guess)
     length = len(word)
     count = 0
-    display = ' _' * length
+    display = '_' * length
     already_guessed = []
     play_game = ""
 
@@ -206,7 +207,7 @@ def hangman():
                   "  |    / \ \n"
                   "__|__\n")
             print("Wrong guess. You are hanged!!!\n")
-            print("The word was: ", word, "/n")
+            print("The word was: ", already_guessed, word)
             play_loop()
 
     if word == '_' * length:
