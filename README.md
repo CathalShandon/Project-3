@@ -1,31 +1,38 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Hangman
 
-Welcome CathalShandon,
+Hangman is a game for two in which one player tries to guess the letters of a word, the other player recording failed attempts by drawing a gallows and someone hanging on it, line by line.
+For this project I wanted to create a version of this game that you can play against the computer rather than playing against another person.
+The way this game plays will tell you how many tries you have and how many letters you have to guess.
+You win by guessing the word that the computer has chosen for you in that game.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+[Click here to go to the live website!]
 
-## Creating the Heroku app
+## Table of contents
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Plans and structure 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Features 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Welcome page
+- This is the first page you see when the app loads. On this page there is a welcome message and a question to the user. The question asks the user if they want to see the instructions or if they are happy to go ahead and play without seeing them. 
 
-Connect your GitHub repository and deploy as normal.
+### Instructions
+- The instructions page explains to the user how the game is played and then asks the user if they are ready for the game.
 
-## Constraints
+### Game
+- When the user starts the game, it shows the user the length of the word they are guessing and asks the user to enter a letter.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
+- While the user is playing the game page also shows other things such as if their last guess was valid, correct, or incorrect, how many tries the user has left, what letters the user has used so far and the letters guessed correctly in their positions within the word. 
+
+
+
+## Testing
+
+### Python
+Python was tested using PEP8 [PEP8 validator](http://pep8online.com/) 
+
+The Python results came back with the following:
