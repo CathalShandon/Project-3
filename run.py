@@ -1,6 +1,10 @@
+"""
+All imports.
+"""
 import random
 import time
 import os
+import string
 
 
 def welcome():
@@ -8,8 +12,7 @@ def welcome():
     Show welcome message and ask user if they would like to see instructions.
     """
 
-
-# A welcome to the game
+    # A welcome to the game
     name = input("Enter your username: ")
     os.system("cls" if os.name == "nt" else "clear")
     print("Hello " + name + " Best of luck in this Hangman game!\n")
@@ -18,8 +21,9 @@ def welcome():
     see_instructions = input(
         "Please type 1 to see the instructions, " "or 2 play game:\n"
         )
-# Make sure users input is valid.
+    # Make sure users input is valid.
     while see_instructions != "1" and see_instructions != "2":
+
         see_instructions = input(
             "\nInvalid input, Please type 1 to "
             "see the instructions, or 2 to skip them "
@@ -63,6 +67,9 @@ def instructions():
 
 # The game
 def main():
+    """
+    Main funtion to run code.
+    """
     global count
     global display
     global word
@@ -75,7 +82,7 @@ def main():
     word = random.choice(words_to_guess)
     length = len(word)
     count = 0
-    display = '_' * length
+    display = ' _' * length
     already_guessed = []
     play_game = ""
 
@@ -83,6 +90,9 @@ def main():
 
 
 def play_loop():
+    """
+    Ask user if they want to play again.
+    """
     global play_game
     play_game = input("Do You want to play game again? y = yes, n = no \n ")
     while play_game not in ["y", "n", "Y", "N"]:
@@ -100,10 +110,13 @@ def play_loop():
 
 
 def hangman():
+    """
+    Plays the hangman game.
+    """
     global count
     global display
     global word
-    global already_guessed
+    global ALREADY_GUESSED
     global play_game
     limit = 5
 
@@ -112,11 +125,11 @@ def hangman():
         "Hint: The word has", len(word), "letters")
     guess = input("This is the word: " + display + " Enter your guess: \n")
     guess = guess.strip()
-    if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
-        print("Invalid Input, Try a letter.\n")
+    if guess.lower() not in list(string.ascii_lowercase):
         os.system("cls" if os.name == "nt" else "clear")
+        print("Invalid Input, Try a letter.\n")
         hangman()
- 
+
     elif guess in word:
         already_guessed.extend([guess])
         index = word.find(guess)
@@ -140,9 +153,9 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Wrong guess. " + str(limit - count)
-                  + " guesses remaining\n")
-            
+            print("Wrong guess. " + str(limit - count) +
+                  " guesses remaining\n")
+
         elif count == 2:
             time.sleep(1)
             print("   _____ \n"
@@ -153,8 +166,8 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Wrong guess. " + str(limit - count)
-                  + " guesses remaining\n")
+            print("Wrong guess. " + str(limit - count) +
+                  " guesses remaining\n")
 
         elif count == 3:
             time.sleep(1)
@@ -166,8 +179,8 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Wrong guess. " + str(limit - count)
-                  + " guesses remaining\n")
+            print("Wrong guess. " + str(limit - count) +
+                  " guesses remaining\n")
 
         elif count == 4:
             time.sleep(1)
@@ -179,8 +192,8 @@ def hangman():
                   "  |      \n"
                   "  |      \n"
                   "__|__\n")
-            print("Wrong guess. " + str(limit - count)
-                  + " guesses remaining\n")
+            print("Wrong guess. " + str(limit - count) +
+                  " guesses remaining\n")
 
         elif count == 5:
             time.sleep(1)
@@ -193,7 +206,7 @@ def hangman():
                   "  |    / \ \n"
                   "__|__\n")
             print("Wrong guess. You are hanged!!!\n")
-            print("The word was: ", already_guessed, word)
+            print("The word was: ", word, "/n")
             play_loop()
 
     if word == '_' * length:
@@ -206,5 +219,4 @@ def hangman():
 main()
 welcome()
 instructions()
-
 hangman()

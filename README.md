@@ -7,7 +7,7 @@ You win by guessing the word that the computer has chosen for you in that game.
 
 
 
-[Click here to go to the live website!]
+[Click here to go to the live website!](https://premier-league-hangman.herokuapp.com/)
 
 ## Table of contents
 
@@ -22,11 +22,8 @@ You win by guessing the word that the computer has chosen for you in that game.
     - [Losing message](#losing-message)   
     - [Winning message](#winning-message) 
     - [Clear terminal](#clear-terminal)
-    - [Extra features](#extra-features)
 3. [Testing](#testing)
     - [Python](#python)
-    - [Manual Testing](#manual-testing)
-    - [Bugs](#bugs)
 4. [Deployment](#deployment)
 
 
@@ -75,14 +72,31 @@ You win by guessing the word that the computer has chosen for you in that game.
 Python was tested using PEP8 [PEP8 validator](http://pep8online.com/) 
 
 The Python results came back with the following:
+<img src="images/code-checker.png" alt="python code checker">
 
+- I fixed all them problems here:
+<img src="images/code-checker1.png" alt="python code fixed">
 
-
-### Manual Testing 
-
-1. Would the user like to see the instructions?
- the user is asked to input either 1 for yes or 2 for no.
-
- ### Bugs 
 
  ## Deployment 
+
+- Deployment steps on Heroku. 
+
+- Set up a Heroku account (if needed)
+
+- In the top right corner of the dashboard, click "New" and choose "Create new app."
+
+- The name of your application must be unique. Click "Create App" after selecting your region.
+
+- Click the "Settings" tab and scroll down to "Config Vars" on your project page.
+
+- Enter "PORT" in the KEY input field, followed by "8000" in the VALUE input field and Add the Config Vars by clicking the "Add" button.
+
+- Add the Python and Node.js buildpacks to the buildpacks section, ensuring that the Python builds are listed above the Node.js builds.
+
+
+- Go back to the tabs at the top of the page, then select the "Deploy" tab and choose Github deployment.
+
+- Then click the "Connect" button to link your repository.
+
+- Select either Automatic Deployment or Manual Deployment at the bottom of the page. Whenever a project is pushed to Github, Automatic Deployment will deploy it to Heroku. Wait for your project to be deployed.
