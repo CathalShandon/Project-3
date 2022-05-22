@@ -70,7 +70,7 @@ def main():
     global length
     global play_game
     words_to_guess = ["chelsea", "liverpool", "leeds", "watford", "everton",
-                      "asrsenal", "wolves", "tottenham", "brentford",
+                      "asrsenal", "wolves", "tottenham", "norwich",
                       "newcastle"]
     word = random.choice(words_to_guess)
     length = len(word)
