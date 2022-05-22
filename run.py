@@ -21,7 +21,7 @@ def welcome():
 # Make sure users input is valid.
     while see_instructions != "1" and see_instructions != "2":
         see_instructions = input(
-            "\n\033[1;31mInvalid input, Please type 1 to "
+            "\nInvalid input, Please type 1 to "
             "see the instructions, or 2 to skip them "
             "and\nstart the game:\n"
         )
@@ -51,11 +51,13 @@ def instructions():
 
     # Ask user if they are ready to play.
     print("Are you ready to play?")
-    ready = input("Please type y for yes and n for no:\n")
-    os.system("cls" if os.name == "nt" else "clear")
+    ready = input("Please type y for yes or any button to go"
+                  "back to welcome page:\n")
     if ready == "y":
+        os.system("cls" if os.name == "nt" else "clear")
         hangman()
     else:
+        os.system("cls" if os.name == "nt" else "clear")
         welcome()
 
 
@@ -86,25 +88,13 @@ def play_loop():
     while play_game not in ["y", "n", "Y", "N"]:
         play_game = input("Do You want to play game again? y = yes, n = no \n")
     if play_game == 'y':
+        os.system("cls" if os.name == "nt" else "clear")
         main()
         hangman()
     elif play_game == "n":
         print("Thanks For Playing! We hope to see you back again!")
         exit()
 
-
-def name1():
-
-    # Ask user to input username.
-    name = input("Enter your username: ")
-    os.system("cls" if os.name == "nt" else "clear")
-    print("Hello " + name + " Best of luck in this Hangman game!\n")
-    time.sleep(2)
-    print("The game is about to start!\nCan you guess this premier league"
-          " team!")
-    time.sleep(2)
-    print("You will have 5 attempts to try guess the word!\n")
-    time.sleep(2)
 
 # Conditions required to play game #
 
@@ -116,7 +106,7 @@ def hangman():
     global already_guessed
     global play_game
     limit = 5
-  
+
     # Game starts.
     print(
         "Hint: The word has", len(word), "letters")
@@ -124,8 +114,9 @@ def hangman():
     guess = guess.strip()
     if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
         print("Invalid Input, Try a letter.\n")
+        os.system("cls" if os.name == "nt" else "clear")
         hangman()
-
+ 
     elif guess in word:
         already_guessed.extend([guess])
         index = word.find(guess)
@@ -151,7 +142,7 @@ def hangman():
                   "__|__\n")
             print("Wrong guess. " + str(limit - count)
                   + " guesses remaining\n")
-
+            
         elif count == 2:
             time.sleep(1)
             print("   _____ \n"
@@ -215,5 +206,5 @@ def hangman():
 main()
 welcome()
 instructions()
-name1()
+
 hangman()
